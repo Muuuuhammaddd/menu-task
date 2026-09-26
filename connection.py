@@ -13,7 +13,7 @@ async def verify_password(password, hashed_password):
 
 
 
-async def register_user(username, password):
+async def registions(username, password):
     conn = await connection()
     try:
         password_hash = await hash_password(password)
@@ -21,7 +21,7 @@ async def register_user(username, password):
             "INSERT INTO users(username, password_hash) VALUES($1, $2)",
             username, password_hash
         )
-        print("==Registered==")
+        print("Registered")
         return True
     except Exception as error:
         print(f"Error registering: {error}")

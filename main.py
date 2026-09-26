@@ -4,12 +4,12 @@ import asyncio
 from getpass import getpass
 
 
-async def register_screen():
-    print("Аккаунт не найден. Нужно зарегистрироваться.\n")
+async def registerr():
+    print("Нужно зарегистрироваться.")
     while True:
         username = input("Username: ")
         password = getpass("Password: ")
-        if await register_user(username, password):
+        if await registions(username, password):
             return username
 
 
@@ -27,7 +27,7 @@ async def main():
 
     existing_user = await get_first_user()
     if existing_user is None:
-        current_user = await register_screen()
+        current_user = await registerr()
     else:
         current_user = await login_screen()
 

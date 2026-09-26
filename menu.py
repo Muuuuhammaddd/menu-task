@@ -14,7 +14,7 @@ async def connection():
             port=5432,
             password=ps
         )
-        print("Great Connection")
+        print("Connection")
         return conn
     except Exception as error:
         print(f"Connection Error: {error}")
